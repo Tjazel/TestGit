@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
             return max;
         }
 
-        public double getSpread()
+        public double getDeviation()
         {
             double M = 0.0;
             double S = 0.0;

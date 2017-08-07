@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
                 {
                     numbers = dataset.GenerateNumbers(Convert.ToInt16(n));
                     max = dataset.getMax();
-                    spread = dataset.getSpread();
+                    spread = dataset.getDeviation();
                     spread = Math.Round(spread, 2);
                     string success = "The max value is: " + max + "\nThe spread is:" + spread + "\nThe values are: " + numbers;
                     MessageBox.Show(success);
