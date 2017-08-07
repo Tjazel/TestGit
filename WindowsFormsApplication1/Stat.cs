@@ -15,6 +15,10 @@ namespace WindowsFormsApplication1
 
         public string GenerateNumbers(int n)
         {
+            bool isInt = (n % 1 == 0);
+            if (!isInt)
+                throw new FormatException();
+
             valid = testN.testNum(n); //call method with the input value
             string lNumbers = ""; //Message with the random numbers chosen
             if (valid)  //input value is between 5 and 20
