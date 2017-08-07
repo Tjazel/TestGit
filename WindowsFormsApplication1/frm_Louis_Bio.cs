@@ -20,21 +20,40 @@ namespace WindowsFormsApplication1
 
         private void frm_Louis_Bio_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void mbtn_Calculate_Min_Click(object sender, EventArgs e)
         {
             Stat randomNumbers = new Stat();
+            int max = 0;
+            string numbers = "";
+
+           
             try
             {
-                string numbers = randomNumbers.GenerateNumbers(Convert.ToInt16(tbxEnterNum.Text));
-                int max = randomNumbers.getMax();
-                MessageBox.Show("The max value is: " + max + "\nThe values are: " + numbers);
+                int n = Convert.ToInt16(tbxEnterNum.Text);
+                TestNumber test = new TestNumber();
+                if (test.testNum(n))
+                {
+                    numbers = randomNumbers.GenerateNumbers(Convert.ToInt16(n));
+                    max = randomNumbers.getMax();
+                    string success = "The max value is: " + max + "\nThe values are: " + numbers;
+                    MessageBox.Show(success);
+                }
+                else
+                {
+                    string fail = "The number entered must be an integer";
+                    MessageBox.Show(fail);
+                }
+                    
+                
+                   
             }
             catch (FormatException exp)
             {
-                MessageBox.Show("The number entered must be an integer");
+                string fail = "The number entered must be an integer";
+                MessageBox.Show(fail);
             }
         }
 
