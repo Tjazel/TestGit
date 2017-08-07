@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
         {
             double M = 0.0;
             double S = 0.0;
-            double[] dataset = returnNumbers();
+            double[] dataset = returnAsDouble();
             int k = 1;
 
             for(int i = 0; i < numbers.Length; i++)
@@ -73,7 +73,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        public double[] returnNumbers()
+        public double[] returnAsDouble()
         {
             doubleNumbers = new double[numbers.Length];
             for (int i = 0; i < numbers.Length; i++)
