@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
                     max = dataset.getMax();
                     spread = dataset.getDeviation();
                     spread = Math.Round(spread, 2);
-                    string success = "The max value is: " + max + "\nThe spread is:" + spread + "\nThe values are: " + numbers;
+                    string success = "The max value is: " + max + "\nThe spread is: " + spread + "\nThe values are: " + numbers;
                     
                     MessageBox.Show(success);
                 }
