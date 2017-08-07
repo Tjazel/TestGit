@@ -22,5 +22,30 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void mbtn_Calculate_Min_Click(object sender, EventArgs e)
+        {
+            Stat randomNumbers = new Stat();
+            try
+            {
+                string numbers = randomNumbers.GenerateNumbers(Convert.ToInt16(tbxEnterNum.Text));
+                int max = randomNumbers.getMax();
+                MessageBox.Show("The max value is: " + max + "\nThe values are: " + numbers);
+            }
+            catch (FormatException exp)
+            {
+                MessageBox.Show("The number entered must be an integer");
+            }
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtxbEnter_Number_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
