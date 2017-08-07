@@ -23,9 +23,16 @@ namespace WindowsFormsApplication1
         {
             //Call a class with method to generate n random numbers, on which the max will be calculated.
             Stat calculations = new Stat();
-            string numbers = calculations.GenerateNumbers(Convert.ToInt16(mtxbEnter_Number.Text));
-            int max = calculations.getMax();
-            MessageBox.Show("The max value is: " + max + "\nThe values are: " + numbers);
+            try
+            {
+                string numbers = calculations.GenerateNumbers(Convert.ToInt16(mtxbEnter_Number.Text));
+                int max = calculations.getMax();
+                MessageBox.Show("The max value is: " + max + "\nThe values are: " + numbers);
+            }
+            catch(FormatException exp)
+            {
+                MessageBox.Show("The number entered must be an integer");
+            }
         }
     }
 }
