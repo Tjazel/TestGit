@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
         private void mbtn_Calculate_Max_Click(object sender, EventArgs e)
         {
             //Call a class with method to generate n random numbers, on which the max will be calculated.
-            feature_denieke calculations = new feature_denieke();
+            Stat calculations = new Stat();
             string numbers = calculations.GenerateNumbers(Convert.ToInt16(mtxbEnter_Number.Text));
             int max = calculations.getMax();
             MessageBox.Show("The max value is: " + max + "\nThe values are: " + numbers);
