@@ -25,8 +25,9 @@ namespace WindowsFormsApplication1
 
         private void mbtn_Calculate_Min_Click(object sender, EventArgs e)
         {
-            Stat randomNumbers = new Stat();
+            Stat dataset = new Stat();
             int max = 0;
+            double spread = 0;
             string numbers = "";
 
            
@@ -36,9 +37,11 @@ namespace WindowsFormsApplication1
                 TestNumber test = new TestNumber();
                 if (test.testNum(n))
                 {
-                    numbers = randomNumbers.GenerateNumbers(Convert.ToInt16(n));
-                    max = randomNumbers.getMax();
-                    string success = "The max value is: " + max + "\nThe values are: " + numbers;
+                    numbers = dataset.GenerateNumbers(Convert.ToInt16(n));
+                    max = dataset.getMax();
+                    spread = dataset.getSpread();
+                    spread = Math.Round(spread, 2);
+                    string success = "The max value is: " + max + "\nThe spread is:" + spread + "\nThe values are: " + numbers;
                     MessageBox.Show(success);
                 }
                 else

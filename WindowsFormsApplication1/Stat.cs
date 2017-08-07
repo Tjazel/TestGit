@@ -10,6 +10,7 @@ namespace WindowsFormsApplication1
     {
         Random rnd = new Random(); //Generate random numbers
         private int[] numbers;  //Hold random numbers
+        private double[] doubleNumbers;
         TestNumber testN = new TestNumber();  //Class to test the validity of input number
         Boolean valid = false; //boolean if value is between 5 and 20 
 
@@ -53,10 +54,37 @@ namespace WindowsFormsApplication1
             return max;
         }
 
-        public int getSpread()
+        public double getSpread()
         {
+            double M = 0.0;
+            double S = 0.0;
+            double[] dataset = returnNumbers();
+            int k = 1;
 
-            return;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                double tmpM = M;
+                M += (dataset[i] - tmpM) / k;
+                S += (dataset[i] - tmpM) * (dataset[i] - M);
+                k++;
+            }
+      
+            return Math.Sqrt(S / (k - 1));
+
+        }
+
+        public double[] returnNumbers()
+        {
+            doubleNumbers = new double[numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+         
+                
+                    doubleNumbers[i] = Convert.ToDouble(numbers[i]);
+                
+                
+            }
+            return doubleNumbers;
         }
     }
 }
