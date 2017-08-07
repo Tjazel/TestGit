@@ -137,7 +137,6 @@
             this.Name = "frm_Denieke_Bio";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
-            this.Load += new System.EventHandler(this.frm_Denieke_Bio_Load);
             this.pnlBio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlCalculate.ResumeLayout(false);
