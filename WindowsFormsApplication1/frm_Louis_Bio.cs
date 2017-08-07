@@ -42,11 +42,12 @@ namespace WindowsFormsApplication1
                     spread = dataset.getDeviation();
                     spread = Math.Round(spread, 2);
                     string success = "The max value is: " + max + "\nThe spread is:" + spread + "\nThe values are: " + numbers;
+                    
                     MessageBox.Show(success);
                 }
                 else
                 {
-                    string fail = "The number entered must be an integer";
+                    string fail = "Incorrect: Value must be between 5 and 20";
                     MessageBox.Show(fail);
                 }
                     
@@ -55,7 +56,7 @@ namespace WindowsFormsApplication1
             }
             catch (FormatException exp)
             {
-                string fail = "The number entered must be an integer";
+                string fail = "Incorrect Format: Integers only";
                 MessageBox.Show(fail);
             }
         }
