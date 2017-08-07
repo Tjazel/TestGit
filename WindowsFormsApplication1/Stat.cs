@@ -52,5 +52,11 @@ namespace WindowsFormsApplication1
                 max = -1;
             return max;
         }
+
+        public int getSpread()
+        {
+
+            return;
+        }
     }
 }
